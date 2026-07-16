@@ -1,0 +1,19 @@
+whatsapp-sender
+
+A Node.js CLI tool that automates broadcasting WhatsApp messages to every
+member of a specific WhatsApp group, individually (as separate DMs rather
+than a group post). Built on the whatsapp-web.js library, which drives a
+real WhatsApp Web session via a headless/visible Chrome browser (Puppeteer)
+authenticated by scanning a QR code.
+
+How it works:
+- On first run, displays a QR code in the terminal to link with WhatsApp.
+- Once connected, looks up a hardcoded target group ("Open Truck_Fleetco")
+  and lists all its members.
+- Prompts the user via an interactive terminal menu to choose content type:
+  text, image, audio, video, or document.
+- Sends the chosen content to each group member one-by-one as an individual
+  message, with a short delay between sends, logging success/failure per
+  recipient.
+
+Tech stack: Node.js, whatsapp-web.js, qrcode-terminal, readline (built-in).
